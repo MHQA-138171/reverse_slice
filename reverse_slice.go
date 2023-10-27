@@ -6,7 +6,7 @@ import (
 
 func ReverseSlice(slice []int) error {
 	if slice == nil {
-		return errors.New("the array passed is empty")
+		return errors.New("the slice passed is empty")
 	}
 	LEN := len(slice)
 	temp := make([]int, LEN)
