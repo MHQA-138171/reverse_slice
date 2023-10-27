@@ -1,11 +1,10 @@
-package main
+package reverseslice
 
 import (
 	"errors"
-	"fmt"
 )
 
-func reverseSlice(slice []int) error {
+func ReverseSlice(slice []int) error {
 	if slice == nil {
 		return errors.New("the array passed is empty")
 	}
@@ -21,12 +20,4 @@ func reverseSlice(slice []int) error {
 	}
 
 	return nil
-}
-func main() {
-	slice := []int{0, 1, 2}
-	reverseSlice(slice)
-	for i := range slice {
-		fmt.Println(slice[i])
-	}
-
 }
