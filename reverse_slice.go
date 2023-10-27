@@ -1,20 +1,32 @@
-package reverseslice
+package main
 
 import (
 	"errors"
 	"fmt"
 )
 
-func ReverseSlice(slice []int) error {
+func reverseSlice(slice []int) error {
 	if slice == nil {
 		return errors.New("the array passed is empty")
 	}
-	fmt.Println(len(slice))
-	startingIndex := len(slice) - 1
-	for i := startingIndex; i >= 0; i-- {
-		for j := 0; i < len(slice); j++ {
-			slice[j] = slice[i]
-		}
+	LEN := len(slice)
+	temp := make([]int, LEN)
+	j := 0
+	for i := LEN - 1; i >= 0; i-- {
+		temp[j] = slice[i]
+		j++
 	}
+	for i := 0; i < LEN; i++ {
+		slice[i] = temp[i]
+	}
+
 	return nil
+}
+func main() {
+	slice := []int{0, 1, 2}
+	reverseSlice(slice)
+	for i := range slice {
+		fmt.Println(slice[i])
+	}
+
 }
